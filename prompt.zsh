@@ -14,7 +14,8 @@ add-zsh-hook chpwd prompt_chpwd
 
 zstyle -e ':completion:*:default' \
 	list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")';
-zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:git:*' formats ' %b %c'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-staged-changes true
 zstyle ':vcs_info:*+pre-get-data:*' hooks pre-get-data
@@ -39,9 +40,9 @@ function estyle-cfc() {
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep -q '^?? ' 2> /dev/null ; then
-        hook_com[staged]+='✗'
+        hook_com[staged]='✗'
 	else 
-		hook_com[staged]+=''
+		hook_com[staged]=''
     fi
 }
 
@@ -70,17 +71,19 @@ FORCE_RUN_VCS_INFO=1
 
 precmd_functions+=( precmd_vcs_info )
 
-function prompt_precmd { 
+function prompt_precmd {
 	vcs_info
 
 	PS1='$(_current_language) %F{4}%1~%f'
-	zstyle ':vcs_info:git:*' formats ' %b %c'
 	if [[ -n $vcs_info_msg_0_ ]]; then
-		STATUS=$(git ls-files --other --exclude-standard --directory | egrep -v '/$')
+		NOT_STAGED_COMMIT=$(git diff --name-only | sed q)
+		STAGED_COMMIT=$(git diff --cached --name-only | sed q)
 
-		if [[ -n $STATUS  ]]; then
+		if [[ -n $NOT_STAGED_COMMIT ]]; then
 			PS1+='%F{#f33}${vcs_info_msg_0_}'
-		else 
+		elif [[ -n $STAGED_COMMIT ]]; then
+			PS1+='%F{3}${vcs_info_msg_0_}'
+		else
 			PS1+='%F{2}${vcs_info_msg_0_}'
 		fi
 	fi
@@ -92,4 +95,5 @@ add-zsh-hook precmd prompt_precmd
 function prompt_chpwd {
 	FORCE_RUN_VCS_INFO=1
 }
+
 add-zsh-hook chpwd prompt_chpwd
