@@ -9,6 +9,7 @@ A minimal zsh theme written in shell
 - [x] Display if there is any error command
 - [x] Display change for each git stage
 - [x] Show time for each command's execution
+- [x] Show what language you are working on
 
 ## Installation
 1. Setup this configuration into `~/.config/zsh`
