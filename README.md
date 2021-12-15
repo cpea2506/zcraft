@@ -1,3 +1,24 @@
-# zsh-config
+<div align="center">
+<img width="585" alt="Screen Shot 2021-12-15 at 17 06 47" src="https://user-images.githubusercontent.com/42694704/146170391-02ebd6ed-cd76-4124-90aa-198340e16693.png">
+</div>
 
-<img width="579" alt="Screen Shot 2021-12-15 at 03 18 13" src="https://user-images.githubusercontent.com/42694704/146073171-d4011c90-c2bc-4aa2-9dec-ce337eef482e.png">
+## Introduction
+A minimal zsh theme written in shell
+
+## Features
+- [x] Display if there is any error command
+- [x] Display change for each git stage
+- [x] Show time for each command's execution
+
+## Installation
+1. Setup this configuration into `~/.config/zsh`
+      ```zsh
+      git clone git@github.com:cpea2506/zsh-config.git ~/.config/zsh
+      ```
+
+2. Export `ZDOTDIR` and execute `~/config/.zshrc` in `~/.zshrc`
+    ```zsh
+    echo "export ZDOTDIR=$HOME/.config/zsh\nsource $HOME/.config/zsh/.zshrc" >> ~/.zshrc
+    ```
+
+3. Exit zsh and enjoy your new look.
