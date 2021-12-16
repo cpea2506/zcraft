@@ -87,7 +87,3 @@ function time_precmd {
     unset prompt_elapsed_time
   fi
 }
-
-function prompt_chpwd {
-    FORCE_RUN_VCS_INFO=1
-}
