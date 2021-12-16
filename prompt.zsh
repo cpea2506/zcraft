@@ -69,7 +69,7 @@ function prompt_precmd {
 		UNTRACKED=$(git ls-files --other --exclude-standard --directory --no-empty-directory| sed q)
 		UNSTAGED=$(git diff --name-only | sed q)
 		STAGED=$(git diff --cached --name-only | sed q)
-		COMMIT=$(git log --no-decorate --single-worktree --ignore-missing origin/$vcs_info_msg_0_..$vcs_info_msg_0_ -q | sed q)
+		COMMITED=$(git log --no-decorate --single-worktree --ignore-missing origin/$vcs_info_msg_0_..$vcs_info_msg_0_ -q | sed q)
 
 		if [[ -n $UNSTAGED || $UNTRACKED ]]; then
 			PS1+=' %F{#f33}$vcs_info_msg_0_ ✗'
