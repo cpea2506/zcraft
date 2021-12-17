@@ -7,8 +7,8 @@ alias train=sl
 alias lg=lazygit
 alias neo=neofetch
 alias aqua=asciiquarium
-alias nvide=neovide --frameless
 alias ..="cd .."
+alias nvide="neovide --frameless"
 alias nix-remove="nix-collect-garbage"
 alias postgres-start="postgres -D /opt/homebrew/var/postgres"
 alias mysql-start="mysqld_safe --datadir=/opt/homebrew/var/mysql"
