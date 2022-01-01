@@ -56,6 +56,11 @@ function mkcd {
   fi
 }
 
+function gccd() {
+  command git clone --recurse-submodules "$@"
+  [[ -d "$_" ]] && cd "$_" || cd "${${_:t}%.git}"
+}
+
 # get time command execution
 zmodload zsh/datetime
 
