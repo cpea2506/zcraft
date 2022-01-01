@@ -64,23 +64,27 @@ FORCE_RUN_VCS_INFO=1
 function prompt_precmd {
 	vcs_info
 	
-	PS1='$(_current_language) %F{4}%1~%f' 
+	PS1='$(_current_language) %F{#00b0ff}%1~%f' 
 	if [[ -n $vcs_info_msg_0_ ]]; then
 		UNTRACKED=$(git ls-files --other --exclude-standard --directory --no-empty-directory| sed q)
 		UNSTAGED=$(git diff --name-only | sed q)
-		STAGED=$(git diff --cached --name-only | sed q)
-		COMMITED=$(git log --no-decorate --single-worktree --ignore-missing origin/$vcs_info_msg_0_..$vcs_info_msg_0_ -q | sed q)
 
 		if [[ -n $UNSTAGED || $UNTRACKED ]]; then
 			PS1+=' %F{#f33}$vcs_info_msg_0_ ✗'
-		elif [[ -n $STAGED || $COMMITED ]]; then
-			PS1+=' %F{3}$vcs_info_msg_0_ ±'
 		else
-			PS1+=' %F{2}$vcs_info_msg_0_ '
+			STAGED=$(git diff --cached --name-only | sed q)
+			COMMITED=$(git log --no-decorate --single-worktree --ignore-missing \
+                origin/$vcs_info_msg_0_..$vcs_info_msg_0_ -q | sed q)
+
+			if [[ -n $STAGED || $COMMITED ]]; then
+				PS1+=' %F{#ffc900}$vcs_info_msg_0_ ±'
+			else
+				PS1+=' %F{#3dd177}$vcs_info_msg_0_ '
+			fi
 		fi
 	fi
-	PS1+=' %(?.%F{2} .%F{#f63} )%f: '
-	RPS1='%F{cyan}$prompt_elapsed_time%f'
+	PS1+=' %(?.%F{#3dd177} .%F{#f63} )%f: '
+	RPS1='%F{#64fcda}$prompt_elapsed_time%f'
 }
 
 function prompt_chpwd {
