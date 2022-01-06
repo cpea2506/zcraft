@@ -11,14 +11,22 @@ A minimal zsh theme written in shell
 - [x] Show time for each command's execution
 - [x] Show what language you are working on
 
+## Option
+- You can display if your current git branch is ahead or behind remote
+
+  ```bash
+  # default
+  export ZCRAFT_GIT_SHOW_AHEAD_BEHIND=true
+  ```
+
 ## Installation
 1. Setup this configuration into `~/.config/zsh`
-      ```zsh
-      git clone git@github.com:cpea2506/zsh-config.git ~/.config/zsh
+      ```bash
+      git clone git@github.com:cpea2506/zcraft.git ~/.config/zsh
       ```
 
 2. Export `ZDOTDIR` and execute `~/config/.zshrc` in `~/.zshrc`
-    ```zsh
+    ```bash
     echo "export ZDOTDIR=$HOME/.config/zsh\nsource $HOME/.config/zsh/.zshrc" >> ~/.zshrc
     ```
 
