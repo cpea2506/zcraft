@@ -86,7 +86,7 @@ function prompt_precmd {
         fi
 	fi
     PS1+=' %(?.%F{#3dd177} .%F{#f63} )%f: '
-	RPS1=' %F{#64fcda}$prompt_elapsed_time%f'
+	RPS1='%F{#64fcda}$prompt_elapsed_time%f'
 }
 
 function prompt_chpwd {
