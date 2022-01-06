@@ -40,6 +40,23 @@ function _current_language {
 	fi
 }
 
+function _branch_ahead_behind {
+    local a=$1 b="origin/$1"
+    local base=$( git merge-base $a $b )
+    local aref=$( git rev-parse  $a )
+    local bref=$( git rev-parse  $b )
+
+    if [[ $aref == $bref ]]; then
+        echo ""
+    elif [[ $aref == $base ]]; then
+        echo " ↓"
+    elif [[ $bref == $base ]]; then
+        echo " ↑"
+    else
+        echo " ﳤ"
+    fi
+}
+
 function add {
 	for item in $@; do
 		source $ZDOTDIR/$item.zsh
@@ -92,3 +109,4 @@ function time_precmd {
     unset prompt_elapsed_time
   fi
 }
+
