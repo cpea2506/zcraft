@@ -12,8 +12,8 @@ A minimal zsh theme written in shell
 - [x] Show what language you are working on
 
 ## Option
+Put every options in `~/.config/zsh/exports.zsh`
 - You can display if your current git branch is ahead or behind remote
-
   ```bash
   # default
   export ZCRAFT_GIT_SHOW_AHEAD_BEHIND=true
