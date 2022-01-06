@@ -2,12 +2,12 @@
 source $ZDOTDIR/functions.zsh
 
 alias ~=cd
-alias gt=gotop
 alias cl=clear 
 alias train=sl
 alias lg=lazygit
 alias neo=neofetch
 alias aqua=asciiquarium
+alias btm="btm -C $HOME/.config/btm/config.toml"
 
 # kitty
 alias icat="kitty +kitten icat"
