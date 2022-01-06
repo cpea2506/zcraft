@@ -81,7 +81,7 @@ function prompt_precmd {
             PS1+=' %F{#3dd177}$vcs_info_msg_0_ '
 		fi
 
-        if $GIT_SHOW_AHEAD_BEHIND; then
+        if $ZCRAFT_GIT_SHOW_AHEAD_BEHIND; then
             PS1+='$(_branch_ahead_behind $vcs_info_msg_0_)'
         fi
 	fi
