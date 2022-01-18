@@ -1,6 +1,5 @@
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-autoload -U compinit && compinit
 
 # Load and initialize the completion system ignoring insecure directories with a
 # cache time of 20 hours, so it should almost always regenerate the first time a
