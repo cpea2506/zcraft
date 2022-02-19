@@ -24,7 +24,7 @@ Put every options in `~/.config/zsh/exports.zsh`
 1. Install dependencies:
 
    - We use `exa` as a modern replacement for default `ls` command. See installation here: [exa](https://github.com/ogham/exa#installation). 
-   - If you don't want to use it. You can remove all aliases related to `exa` at the end of `alisases.zsh` with tag `#tree search`
+   - If you don't want to use it. You can remove all aliases related to `exa` at the end of `aliases.zsh` with tag `#tree search`
   
 2. Setup this configuration into `~/.config/zsh`
       ```bash
