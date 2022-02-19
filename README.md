@@ -21,14 +21,19 @@ Put every options in `~/.config/zsh/exports.zsh`
   ```
 
 ## Installation
-1. Setup this configuration into `~/.config/zsh`
+1. Install dependencies:
+
+   - We use `exa` as a modern replacement for default `ls` command. See installation here: [exa](https://github.com/ogham/exa#installation). 
+   - If you don't want to use it. You can remove all aliases related to `exa` at the end of `alisases.zsh` with tag `#tree search`
+  
+2. Setup this configuration into `~/.config/zsh`
       ```bash
       git clone git@github.com:cpea2506/zcraft.git ~/.config/zsh
       ```
 
-2. Export `ZDOTDIR` and execute `~/config/.zshrc` in `~/.zshrc`
+3. Export `ZDOTDIR` and execute `~/config/.zshrc` in `~/.zshrc`
     ```bash
     echo "export ZDOTDIR=$HOME/.config/zsh\nsource $HOME/.config/zsh/.zshrc" >> ~/.zshrc
     ```
 
-3. Exit zsh and enjoy your new look.
+4. Exit zsh and enjoy your new look.
