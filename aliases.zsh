@@ -3,11 +3,8 @@ source $ZDOTDIR/functions.zsh
 
 alias ~=cd
 alias cl=clear 
-alias train=sl
 alias lg=lazygit
 alias neo=neofetch
-alias aqua=asciiquarium
-alias btm="btm -C $HOME/.config/btm/config.toml"
 
 # kitty
 alias icat="kitty +kitten icat"
@@ -25,10 +22,6 @@ alias gm="git merge"
 alias gst="git status"
 alias gra="git remote add"
 alias grs="git remote set-url"
-
-# database
-alias postgres-start="postgres -D /opt/homebrew/var/postgres"
-alias mysql-start="mysqld_safe --datadir=/opt/homebrew/var/mysql"
 
 # tree search
 alias ls="exa -a --color=always --icons --group-directories-first"
