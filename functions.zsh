@@ -57,7 +57,7 @@ function _branch_ahead_behind {
     fi
 }
 
-function add {
+function _add {
 	for item in $@; do
 		source $ZDOTDIR/$item.zsh
 	done

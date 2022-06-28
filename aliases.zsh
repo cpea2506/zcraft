@@ -2,16 +2,13 @@
 source $ZDOTDIR/functions.zsh
 
 alias ~=cd
+alias ..="cd .."
 alias cl=clear 
 alias lg=lazygit
 alias neo=neofetch
 
 # kitty
 alias icat="kitty +kitten icat"
-
-alias ..="cd .."
-alias nvide="neovide --frameless"
-alias nix-remove="nix-collect-garbage"
 
 # git
 alias gcl="git clone --recurse-submodules"

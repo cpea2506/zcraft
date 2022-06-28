@@ -23,7 +23,7 @@ zstyle ':vcs_info:*+pre-get-data:*' hooks pre-get-data
 zstyle -e ':vcs_info:git:*' \
 	check-for-changes 'estyle-cfc && reply=( true ) || reply=( false )'
 
-function estyle-cfc() {
+function estyle-cfc {
 	local d
 	local -a cfc_dirs
 	cfc_dirs=(
@@ -40,7 +40,7 @@ function estyle-cfc() {
 
 FORCE_RUN_VCS_INFO=1
 
-+vi-pre-get-data() {
++vi-pre-get-data {
     [[ $vcs != git ]] && return
 
     if [[ -n $FORCE_RUN_VCS_INFO ]]; then
